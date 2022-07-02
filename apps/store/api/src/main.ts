@@ -1,5 +1,6 @@
+/* eslint-disable no-console */
 import * as express from 'express';
-import { getAllGames, getGame } from './app/games.repo';
+import { getAllGames, getGame } from './app';
 
 const app = express();
 
@@ -15,11 +16,8 @@ app.get('/api/games/:id', (req, res) => {
   res.send(getGame(req.params.id));
 });
 
-// eslint-disable-next-line @typescript-eslint/no-magic-numbers
 const port = process.env.port ?? 3333;
 const server = app.listen(port, () => {
-  // eslint-disable-next-line no-console
   console.log(`Listening at http://localhost:${port}/api`);
 });
-// eslint-disable-next-line no-console
 server.on('error', console.error);

@@ -11,18 +11,38 @@
     "strictNullChecks": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipDefaultLibCheck": true,
     "strict": true,
     "strictPropertyInitialization": true,
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nxegghead2/store/app": ["apps/store/src/index.ts"],
-      "@nxegghead2/store/formatters": ["libs/store/formatters/src/index.ts"],
-      "@nxegghead2/store/game-detail": ["libs/store/game-detail/src/index.ts"],
-      "@nxegghead2/store/shared": ["libs/store/shared/src/index.ts"]
+      "@nxegghead2/store/types": [
+        "libs/store/types/src/index.ts"
+      ],
+      "@nxegghead2/store/api": [
+        "apps/store/api/src/index.ts"
+      ],
+      "@nxegghead2/store/app": [
+        "apps/store/src/index.ts"
+      ],
+      "@nxegghead2/store/formatters": [
+        "libs/store/formatters/src/index.ts"
+      ],
+      "@nxegghead2/store/game-detail": [
+        "libs/store/game-detail/src/index.ts"
+      ],
+      "@nxegghead2/store/shared": [
+        "libs/store/shared/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

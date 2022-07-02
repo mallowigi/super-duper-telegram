@@ -584,6 +584,7 @@
               },
               "props": false,
               "res": false,
+              "req": false,
               "cmd": {
                 "command": true
               },
@@ -604,6 +605,12 @@
             "allow": [],
             "depConstraints": [
               {
+                "sourceTag": "type:api",
+                "onlyDependOnLibsWithTags": [
+                  "type:util"
+                ]
+              },
+              {
                 "sourceTag": "type:e2e",
                 "onlyDependOnLibsWithTags": [
                   "type:app",
@@ -613,6 +620,7 @@
               {
                 "sourceTag": "type:app",
                 "onlyDependOnLibsWithTags": [
+                  "type:api",
                   "type:feature",
                   "type:util"
                 ]
@@ -620,6 +628,7 @@
               {
                 "sourceTag": "type:feature",
                 "onlyDependOnLibsWithTags": [
+                  "type:api",
                   "type:feature",
                   "type:util"
                 ]

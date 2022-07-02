@@ -1,11 +1,4 @@
-export type Game = {
-  id: string;
-  name: string;
-  description: string;
-  image: string;
-  price: number;
-  rating: number;
-};
+import type { Game } from '@nxegghead2/store/types';
 
 const games: Game[] = [
   {
@@ -35,7 +28,7 @@ const games: Game[] = [
   },
 ];
 
-export const getAllGames = (): Game[] => games;
+export const getAllGames = () => games;
 
 export const getGame = (id: string): Game | undefined =>
   games.find(game => game.id === id);

@@ -1,7 +1,7 @@
 /* eslint-disable */
 export default {
-  displayName: 'api',
-  preset: '../../jest.preset.js',
+  displayName: 'store-api',
+  preset: '../../../jest.preset.js',
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',
@@ -12,5 +12,5 @@ export default {
     '^.+\\.[tj]s$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/apps/api',
+  coverageDirectory: '../../../coverage/apps/store/api',
 };

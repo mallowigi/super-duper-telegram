@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { getAllGames } from '@nxegghead2/store/app';
-import { GameCard } from 'apps/store/src/app/Contents/GameCard';
+import { GameCard } from './GameCard';
+import { getAllGames } from '@nxegghead2/store/api';
+import type { Game } from '@nxegghead2/store/types';
 
 const Root = styled.div`
   display: flex;
@@ -12,7 +13,7 @@ const Root = styled.div`
 `;
 
 export const GamesList = () => {
-  const games = getAllGames();
+  const games: Game[] = getAllGames();
 
   return (
     <Root>
