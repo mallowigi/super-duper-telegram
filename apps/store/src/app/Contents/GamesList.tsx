@@ -11,7 +11,7 @@ const Root = styled.div`
   }
 `;
 
-export const Contents = () => {
+export const GamesList = () => {
   const games = getAllGames();
 
   return (

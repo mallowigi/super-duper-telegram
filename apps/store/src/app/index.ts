@@ -1,1 +1,1 @@
-export { Contents } from './Contents/Contents';
+export { GamesList } from 'apps/store/src/app/Contents/GamesList';
