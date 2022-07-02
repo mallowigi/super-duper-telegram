@@ -29,9 +29,9 @@ export const Contents = () => {
   const getRating = useCallback(
     (game: Game) =>
       new Intl.NumberFormat('en-US', { maximumSignificantDigits: 2 }).format(
-        game.rating * 10,
+        game.rating * 10
       ),
-    [],
+    []
   );
 
   return (
