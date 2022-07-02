@@ -1,7 +1,7 @@
-import { StrictMode } from "react";
-import * as ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import { App } from "./app/App";
+import { StrictMode } from 'react';
+import * as ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { App } from './app/App';
 
 const root = ReactDOM.createRoot(
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion

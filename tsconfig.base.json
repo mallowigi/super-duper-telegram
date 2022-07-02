@@ -20,6 +20,7 @@
     "paths": {
       "@nxegghead2/store/app": ["apps/store/src/index.ts"],
       "@nxegghead2/store/formatters": ["libs/store/formatters/src/index.ts"],
+      "@nxegghead2/store/game-detail": ["libs/store/game-detail/src/index.ts"],
       "@nxegghead2/store/shared": ["libs/store/shared/src/index.ts"]
     }
   },

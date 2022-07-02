@@ -1,11 +1,4 @@
-import {
-  Badge,
-  Card,
-  Group,
-  Image,
-  Text,
-  useMantineTheme,
-} from '@mantine/core';
+import { Badge, Card, Group, Image, Text, useMantineTheme } from '@mantine/core';
 import styled from 'styled-components';
 import { useCallback } from 'react';
 import type { Game } from '@nxegghead2/store/app';
@@ -32,7 +25,11 @@ export const Contents = () => {
   return (
     <Root>
       {games.map((game) => (
-        <Card key={game.id} m="sm" p="lg" shadow="sm" style={{ flex: 1 }}>
+        <Card key={game.id}
+              m="sm"
+              p="lg"
+              shadow="sm"
+              style={{ flex: 1 }}>
           <Card.Section>
             <Image alt={game.name} height={160} src={game.image} />
           </Card.Section>
