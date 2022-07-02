@@ -29,7 +29,11 @@ export const GameCard: FC<Props> = ({ game }) => {
       onClick={navigateToGame}
       p='lg'
       shadow='sm'
-      style={{ flex: 1 }}
+      style={{
+        flex: 1,
+        flexBasis: '30%',
+        flexShrink: 0,
+      }}
     >
       <Card.Section>
         <Image

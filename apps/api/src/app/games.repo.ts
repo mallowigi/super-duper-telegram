@@ -1,34 +1,25 @@
-import type { Game } from '@nxegghead2/store/types';
+import axios from 'axios';
+import type { GameDao } from './game.dao';
 
-const games: Game[] = [
-  {
-    description:
-      'Help your bug family claim the best real estate in a spilled can of beans.',
-    id: 'settlers-in-the-can',
-    image: 'https://media.giphy.com/media/xUNda3pLJEsg4Nedji/giphy.gif',
-    name: 'Settlers in the Can',
-    price: 35,
-    rating: Math.random(),
-  },
-  {
-    description: 'A circular game of Chess that you can eat as you play.',
-    id: 'chess-pie',
-    image: 'https://media.giphy.com/media/iCZyBnPBLr0dy/giphy.gif',
-    name: 'Chess Pie',
-    price: 15,
-    rating: Math.random(),
-  },
-  {
-    description: 'A cat grooming contest goes horribly wrong.',
-    id: 'purrfection',
-    image: 'https://media.giphy.com/media/12xMvwvQXJNx0k/giphy.gif',
-    name: 'Purrfection',
-    price: 45,
-    rating: Math.random(),
-  },
-];
+export const getAllGames = async () => {
+  const games = await axios({
+    method: 'get',
+    url: 'https://api.rawg.io/api/games?key=58263ff7927944758a62204015f14c41',
+  });
+  return games.data?.results?.map((game: GameDao) => ({
+    description: '',
+    id: game.id,
+    image: game.background_image,
+    name: game.name,
+    price: 0,
+    rating: game.rating,
+  }));
+};
 
-export const getAllGames = () => games;
-
-export const getGame = (id: string): Game | undefined =>
-  games.find(game => game.id === id);
+export const getGame = async (id: string) => {
+  const games = await axios({
+    method: 'get',
+    url: 'https://api.rawg.io/api/games?key=58263ff7927944758a62204015f14c41',
+  });
+  return games;
+};

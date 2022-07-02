@@ -1,15 +1,17 @@
 /* eslint-disable no-console */
 import * as express from 'express';
+
 import { getAllGames, getGame } from './app';
 
 const app = express();
 
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
   res.send({ message: 'Welcome to api!' });
 });
 
-app.get('/api/games', (req, res) => {
-  res.send(getAllGames());
+app.get('/api/games', async (req, res) => {
+  const allGames = await getAllGames();
+  res.send(allGames);
 });
 
 app.get('/api/games/:id', (req, res) => {
