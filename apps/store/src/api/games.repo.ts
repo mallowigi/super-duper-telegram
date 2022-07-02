@@ -38,4 +38,4 @@ const games: Game[] = [
 export const getAllGames = (): Game[] => games;
 
 export const getGame = (id: string): Game | undefined =>
-  games.find((game) => game.id === id);
+  games.find(game => game.id === id);

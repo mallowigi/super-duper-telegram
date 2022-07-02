@@ -642,7 +642,7 @@
       "jsx": true
     },
     "ecmaVersion": 12,
-    "project": "tsconfig.base.json",
+    "project": "./tsconfig.base.json",
     "sourceType": "module"
   }
 }

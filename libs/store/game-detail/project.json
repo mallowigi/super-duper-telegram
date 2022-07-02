@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/store/game-detail/src",
+  "projectType": "library",
+  "tags": ["type:feature"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/store/game-detail/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/store/game-detail"],
+      "options": {
+        "jestConfig": "libs/store/game-detail/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
