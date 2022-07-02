@@ -1,7 +1,7 @@
 import { MantineProvider, AppShell, useMantineTheme, Text } from '@mantine/core';
 import { GameHeader } from '@nxegghead2/store/shared';
 import { ThemeProvider } from 'styled-components';
-import { GamesList } from './Contents';
+import { GamesList } from './games';
 import { Route, Routes } from 'react-router-dom';
 import { StoreGameDetail } from '@nxegghead2/store/game-detail';
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { GameCard } from './GameCard';
-import { getAllGames } from '@nxegghead2/api';
-import type { Game } from '@nxegghead2/store/types';
+import { useLoadGames } from './useLoadGames';
+import { Loader } from '@mantine/core';
 
 const Root = styled.div`
   display: flex;
@@ -13,7 +13,10 @@ const Root = styled.div`
 `;
 
 export const GamesList = () => {
-  const games: Game[] = getAllGames();
+  const { games, loading } = useLoadGames();
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <Root>
