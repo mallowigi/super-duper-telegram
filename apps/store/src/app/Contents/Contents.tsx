@@ -6,10 +6,11 @@ import {
   Text,
   useMantineTheme,
 } from '@mantine/core';
-import type { Game } from 'apps/store/src/api/games.repo';
-import { getAllGames } from 'apps/store/src/api/games.repo';
 import styled from 'styled-components';
 import { useCallback } from 'react';
+import type { Game } from '@nxegghead2/store/app';
+import { getAllGames } from '@nxegghead2/store/app';
+import { formatRating } from '@nxegghead2/store/formatters';
 
 const Root = styled.div`
   display: flex;
@@ -26,13 +27,7 @@ export const Contents = () => {
   const secondaryColor =
     theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.gray[7];
 
-  const getRating = useCallback(
-    (game: Game) =>
-      new Intl.NumberFormat('en-US', { maximumSignificantDigits: 2 }).format(
-        game.rating * 10
-      ),
-    []
-  );
+  const getRating = useCallback((game: Game) => formatRating(game.rating), []);
 
   return (
     <Root>

@@ -1,23 +1,23 @@
 {
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/store/shared/src",
+  "sourceRoot": "libs/store/formatters/src",
   "projectType": "library",
-  "tags": ["type:feature"],
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/store/shared/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["libs/store/formatters/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/store/shared"],
+      "outputs": ["coverage/libs/store/formatters"],
       "options": {
-        "jestConfig": "libs/store/shared/jest.config.ts",
+        "jestConfig": "libs/store/formatters/jest.config.ts",
         "passWithNoTests": true
       }
     }
-  }
+  },
+  "tags": ["type:util"]
 }

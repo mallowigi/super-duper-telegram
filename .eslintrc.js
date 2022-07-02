@@ -6,6 +6,7 @@ module.exports = {
     '@typescript-eslint',
     'react',
     'react-hooks',
+    'import',
     'unicorn',
     'sort-keys-fix',
   ],
@@ -518,19 +519,31 @@ module.exports = {
         'unicorn/require-post-message-target-origin': 'error',
         'unicorn/string-content': 'error',
         'unicorn/throw-new-error': 'error',
-        // "@nrwl/nx/enforce-module-boundaries": [
-        //   "error",
-        //   {
-        //     enforceBuildableLibDependency: true,
-        //     allow: [],
-        //     depConstraints: [
-        //       {
-        //         sourceTag: "*",
-        //         onlyDependOnLibsWithTags: ["*"]
-        //       }
-        //     ]
-        //   }
-        // ]
+        '@nrwl/nx/enforce-module-boundaries': [
+          'error',
+          {
+            enforceBuildableLibDependency: true,
+            allow: [],
+            depConstraints: [
+              {
+                sourceTag: 'type:e2e',
+                onlyDependOnLibsWithTags: ['type:app', 'type:util'],
+              },
+              {
+                sourceTag: 'type:app',
+                onlyDependOnLibsWithTags: ['type:feature', 'type:util'],
+              },
+              {
+                sourceTag: 'type:feature',
+                onlyDependOnLibsWithTags: ['type:feature', 'type:util'],
+              },
+              {
+                sourceTag: 'type:util',
+                onlyDependOnLibsWithTags: ['type:util'],
+              },
+            ],
+          },
+        ],
       },
     },
     {

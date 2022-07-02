@@ -1,0 +1,1 @@
+export { formatRating } from './lib';

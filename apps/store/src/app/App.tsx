@@ -1,7 +1,7 @@
 import { MantineProvider, AppShell, useMantineTheme } from '@mantine/core';
 import { GameHeader } from '@nxegghead2/store/shared';
-import { Contents } from 'apps/store/src/app/Contents/Contents';
 import { ThemeProvider } from 'styled-components';
+import { Contents } from '@nxegghead2/store/app';
 
 export const App = () => {
   const theme = useMantineTheme();
