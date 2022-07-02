@@ -1,4 +1,4 @@
-type GamesRepo = {
+export type Game = {
   id: string;
   name: string;
   description: string;
@@ -7,7 +7,7 @@ type GamesRepo = {
   rating: number;
 };
 
-const games: GamesRepo[] = [
+const games: Game[] = [
   {
     description:
       'Help your bug family claim the best real estate in a spilled can of beans.',
@@ -35,7 +35,7 @@ const games: GamesRepo[] = [
   },
 ];
 
-export const getAllGames = (): GamesRepo[] => games;
+export const getAllGames = (): Game[] => games;
 
-export const getGame = (id: string): GamesRepo | undefined =>
+export const getGame = (id: string): Game | undefined =>
   games.find((game) => game.id === id);

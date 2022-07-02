@@ -496,7 +496,24 @@ module.exports = {
         'unicorn/prefer-ternary': 'error',
         'unicorn/prefer-top-level-await': 'error',
         'unicorn/prefer-type-error': 'error',
-        'unicorn/prevent-abbreviations': 'error',
+        'unicorn/prevent-abbreviations': [
+          'error',
+          {
+            replacements: {
+              e: {
+                event: false,
+              },
+              props: false,
+              res: false,
+              cmd: {
+                command: true,
+              },
+              errCb: {
+                handleError: true,
+              },
+            },
+          },
+        ],
         'unicorn/require-array-join-separator': 'error',
         'unicorn/require-post-message-target-origin': 'error',
         'unicorn/string-content': 'error',

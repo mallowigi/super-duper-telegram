@@ -4,10 +4,12 @@ import {
   Group,
   Image,
   Text,
-  useMantineTheme
-} from "@mantine/core";
-import { getAllGames } from "apps/store/src/api/games.repo";
-import styled from "styled-components";
+  useMantineTheme,
+} from '@mantine/core';
+import type { Game } from 'apps/store/src/api/games.repo';
+import { getAllGames } from 'apps/store/src/api/games.repo';
+import styled from 'styled-components';
+import { useCallback } from 'react';
 
 const Root = styled.div`
   display: flex;
@@ -22,7 +24,15 @@ export const Contents = () => {
   const games = getAllGames();
   const theme = useMantineTheme();
   const secondaryColor =
-    theme.colorScheme === "dark" ? theme.colors.dark[1] : theme.colors.gray[7];
+    theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.gray[7];
+
+  const getRating = useCallback(
+    (game: Game) =>
+      new Intl.NumberFormat('en-US', { maximumSignificantDigits: 2 }).format(
+        game.rating * 10,
+      ),
+    [],
+  );
 
   return (
     <Root>
@@ -38,10 +48,7 @@ export const Contents = () => {
           >
             <Text weight={500}>{game.name}</Text>
             <Badge color="pink" variant="light">
-              Rating:{" "}
-              {new Intl.NumberFormat("en-US", {
-                maximumSignificantDigits: 2
-              }).format(game.rating * 10)}
+              Rating: {getRating(game)}
             </Badge>
           </Group>
 

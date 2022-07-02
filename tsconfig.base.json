@@ -17,7 +17,9 @@
     "strictPropertyInitialization": true,
     "skipLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nxegghead2/store/shared": ["libs/store/shared/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
