@@ -307,10 +307,7 @@ module.exports = {
             objectLiteralTypeAssertions: 'never',
           },
         ],
-        '@typescript-eslint/consistent-type-definitions': [
-          'error',
-          'interface',
-        ],
+        '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
         '@typescript-eslint/consistent-type-imports': 'error',
         '@typescript-eslint/default-param-last': 'error',
         '@typescript-eslint/dot-notation': 'error',
@@ -504,19 +501,19 @@ module.exports = {
         'unicorn/require-post-message-target-origin': 'error',
         'unicorn/string-content': 'error',
         'unicorn/throw-new-error': 'error',
-        '@nrwl/nx/enforce-module-boundaries': [
-          'error',
-          {
-            enforceBuildableLibDependency: true,
-            allow: [],
-            depConstraints: [
-              {
-                sourceTag: '*',
-                onlyDependOnLibsWithTags: ['*'],
-              },
-            ],
-          },
-        ],
+        // "@nrwl/nx/enforce-module-boundaries": [
+        //   "error",
+        //   {
+        //     enforceBuildableLibDependency: true,
+        //     allow: [],
+        //     depConstraints: [
+        //       {
+        //         sourceTag: "*",
+        //         onlyDependOnLibsWithTags: ["*"]
+        //       }
+        //     ]
+        //   }
+        // ]
       },
     },
     {

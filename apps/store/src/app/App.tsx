@@ -7,10 +7,10 @@ import {
   Text,
   Footer,
   MediaQuery,
-  Aside,
   Burger
 } from "@mantine/core";
 import { useState, useCallback } from "react";
+import { Contents } from "apps/store/src/app/Contents/Contents";
 
 export const App = () => {
   const theme = useMantineTheme();
@@ -27,14 +27,6 @@ export const App = () => {
       }}
     >
       <AppShell
-        aside={
-          <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
-            <Aside hiddenBreakpoint="sm" p="md" width={{ lg: 300, sm: 200 }}>
-              <Text>Application sidebar</Text>
-            </Aside>
-          </MediaQuery>
-        }
-        asideOffsetBreakpoint="sm"
         fixed
         footer={
           <Footer height={60} p="md">
@@ -80,7 +72,7 @@ export const App = () => {
           }
         }}
       >
-        <Text>Resize app to see responsive navbar in action</Text>
+        <Contents />
       </AppShell>
     </MantineProvider>
   );
