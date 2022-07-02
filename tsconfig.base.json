@@ -24,8 +24,8 @@
       "@nxegghead2/store/types": [
         "libs/store/types/src/index.ts"
       ],
-      "@nxegghead2/store/api": [
-        "apps/store/api/src/index.ts"
+      "@nxegghead2/api": [
+        "apps/api/src/index.ts"
       ],
       "@nxegghead2/store/app": [
         "apps/store/src/index.ts"

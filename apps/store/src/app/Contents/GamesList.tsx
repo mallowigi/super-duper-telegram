@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { GameCard } from './GameCard';
-import { getAllGames } from '@nxegghead2/store/api';
+import { getAllGames } from '@nxegghead2/api';
 import type { Game } from '@nxegghead2/store/types';
 
 const Root = styled.div`
