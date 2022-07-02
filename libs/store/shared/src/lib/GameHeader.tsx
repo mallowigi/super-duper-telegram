@@ -7,7 +7,7 @@ const StyledHeader = styled(Header)`
 `;
 
 export const GameHeader = () => (
-  <StyledHeader height={70} p="md">
+  <StyledHeader height={70} p='md'>
     <Title>Board Game Hoard</Title>
   </StyledHeader>
 );

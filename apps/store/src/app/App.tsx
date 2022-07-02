@@ -3,12 +3,14 @@ import { GameHeader } from '@nxegghead2/store/shared';
 import { ThemeProvider } from 'styled-components';
 import { GamesList } from './games';
 import { Route, Routes } from 'react-router-dom';
-import { GameDetailDrawer } from 'apps/store/src/app/games/GameDetailDrawer';
+import { GameDetailDrawer } from './games/GameDetailDrawer';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 export const App = () => {
   const theme = useMantineTheme();
+  const queryClient = new QueryClient();
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <MantineProvider
         theme={{
           colorScheme: 'light',
@@ -34,6 +36,6 @@ export const App = () => {
           path='/game/:id'
         />
       </Routes>
-    </>
+    </QueryClientProvider>
   );
 };

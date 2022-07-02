@@ -1,1 +1,2 @@
-export { GameHeader } from './Header/Header';
+export * from './GameHeader';
+export * from './ErrorPage';

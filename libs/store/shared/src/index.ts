@@ -1,1 +1,1 @@
-export { GameHeader } from './lib/index';
+export { GameHeader, ErrorPage } from './lib';
