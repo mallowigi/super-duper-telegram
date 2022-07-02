@@ -1,13 +1,12 @@
-import { MantineProvider, AppShell, useMantineTheme, Text } from '@mantine/core';
+import { MantineProvider, AppShell, useMantineTheme } from '@mantine/core';
 import { GameHeader } from '@nxegghead2/store/shared';
 import { ThemeProvider } from 'styled-components';
 import { GamesList } from './games';
 import { Route, Routes } from 'react-router-dom';
-import { StoreGameDetail } from '@nxegghead2/store/game-detail';
+import { GameDetailDrawer } from 'apps/store/src/app/games/GameDetailDrawer';
 
 export const App = () => {
   const theme = useMantineTheme();
-
   return (
     <>
       <MantineProvider
@@ -28,10 +27,10 @@ export const App = () => {
       </MantineProvider>
 
       <Routes>
-        <Route element={<Text>Please select a game to view it's details</Text>} path='/' />
+        <Route element={<>.</>} path='/' />
 
         <Route
-          element={<StoreGameDetail />}
+          element={<GameDetailDrawer />}
           path='/game/:id'
         />
       </Routes>
